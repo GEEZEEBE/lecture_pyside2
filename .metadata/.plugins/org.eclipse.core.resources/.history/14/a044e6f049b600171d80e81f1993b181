@@ -1,0 +1,13 @@
+import serial
+ser = serial.Serial('/dev/ttyACM0', 9600)
+cmd = 0
+while True:
+    command = input("Type something..: (on/ off / bye )");
+    if command !="bye":
+        print("See You!...")
+        break
+    else:
+        ser.write(format(command, 'b').encode())
+    print(ser.readline())
+    
+ser.close()

@@ -1,0 +1,27 @@
+import serial
+import time
+
+ser = serial.Serial('/dev/ttyACM0', 9600)
+cmd = 0
+while True:
+    command = input("Type something..: (on/ off / bye )");
+    if command =="on":
+        print("The LED is on...")
+        arduino.write('H') 
+    elif command =="off":
+        print "The LED is off..."
+        time.sleep(1) 
+        arduino.write('L')
+        onOffFunction()
+    elif command =="bye":
+        print "See You!..."
+        time.sleep(1) 
+        arduino.close()
+    else:
+        print "Sorry..type another thing..!"
+    cmd = 1 - cmd
+    ser.write(format(cmd, 'b').encode())
+    print(ser.readline())
+    time.sleep(2) 
+    
+# ser.close()

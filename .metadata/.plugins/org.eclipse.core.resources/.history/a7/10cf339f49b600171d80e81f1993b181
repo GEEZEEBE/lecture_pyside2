@@ -1,0 +1,4 @@
+import servo
+import time
+time.sleep(1)
+servo.move(1, 90)

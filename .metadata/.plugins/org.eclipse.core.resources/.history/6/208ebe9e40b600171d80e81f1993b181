@@ -1,0 +1,8 @@
+import serial
+ser = serial.Serial('/dev/ttyACM0', 9600)
+cmd = 1
+# while True:
+cmd = 1 - cmd
+ser.write(format(cmd, 'b').encode())
+print(ser.readline())
+ser.close()

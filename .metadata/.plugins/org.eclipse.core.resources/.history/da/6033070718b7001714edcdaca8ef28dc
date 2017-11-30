@@ -1,0 +1,13 @@
+import QtQuick 2.0
+
+Item {
+    Text {
+        id: text1
+        x: 289
+        y: 121
+        text: qsTr("it's a good")
+        font.pixelSize: 12
+    }
+
+}
+
